@@ -1,4 +1,4 @@
-# Install script for directory: C:/BBBBBBBHAPPYBBBBBBB/stm32/Training_Project_HAL_Library/DigitalCtrlBUCK
+# Install script for directory: C:/Users/3545/Desktop/DigitalCtrlBUCK
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -52,6 +52,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/BBBBBBBHAPPYBBBBBBB/stm32/Training_Project_HAL_Library/DigitalCtrlBUCK/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/3545/Desktop/DigitalCtrlBUCK/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
