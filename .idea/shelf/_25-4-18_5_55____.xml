@@ -1,0 +1,164 @@
+<changelist name="在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]" date="1744970110931" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行更新之前于 25-4-18 下午5:55 取消提交了更改 [更改]" />
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/OLED.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/OLED.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/OLED.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/main.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/main.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/main.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/system_stm32f1xx.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/system_stm32f1xx.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/system_stm32f1xx.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_rcc.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_flash.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="AFTER_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/.ninja_deps" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_adc.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_tim.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/syscalls.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/syscalls.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/syscalls.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_gpio_ex.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/CMakeDetermineCompilerABI_C.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_msp.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_dma.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/CMakeDetermineCompilerABI_CXX.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_rcc_ex.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_cortex.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/tim.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/tim.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/tim.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_flash_ex.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_tim_ex.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/adc.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/adc.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/adc.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_pwr.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_exti.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_gpio.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/stm32f1xx_it.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/stm32f1xx_it.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_it.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal_adc_ex.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/stm32f1xx_hal.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/OLED_Data.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/OLED_Data.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/OLED_Data.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/startup_stm32f103c8tx.s.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/project1.bin" />
+    <option name="AFTER_PATH" value="cmake-build-debug/project1.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/project1.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/gpio.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/gpio.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/gpio.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/sysmem.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/project1.elf.dir/Core/Src/sysmem.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/sysmem.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/project1.elf" />
+    <option name="AFTER_PATH" value="cmake-build-debug/project1.elf" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_25-4-18_下午5_55_取消提交了更改_[更改]/project1.elf" />
+  </binary>
+</changelist>

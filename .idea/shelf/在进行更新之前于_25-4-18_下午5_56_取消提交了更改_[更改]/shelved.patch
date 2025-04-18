@@ -1,0 +1,69 @@
+Index: Core/Src/main.c
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* USER CODE BEGIN Header */\r\n/**\r\n  ******************************************************************************\r\n  * @file           : main.c\r\n  * @brief          : Main program body\r\n  ******************************************************************************\r\n  * @attention\r\n  *\r\n  * Copyright (c) 2024 STMicroelectronics.\r\n  * All rights reserved.\r\n  *\r\n  * This software is licensed under terms that can be found in the LICENSE file\r\n  * in the root directory of this software component.\r\n  * If no LICENSE file comes with this software, it is provided AS-IS.\r\n  *\r\n  ******************************************************************************\r\n  */\r\n/* USER CODE END Header */\r\n/* Includes ------------------------------------------------------------------*/\r\n#include \"main.h\"\r\n#include \"adc.h\"\r\n#include \"tim.h\"\r\n#include \"gpio.h\"\r\n\r\n/* Private includes ----------------------------------------------------------*/\r\n/* USER CODE BEGIN Includes */\r\n#include <stdio.h>\r\n\r\n#include \"OLED.h\"\r\n/* USER CODE END Includes */\r\n\r\n/* Private typedef -----------------------------------------------------------*/\r\n/* USER CODE BEGIN PTD */\r\n\r\n/* USER CODE END PTD */\r\n\r\n/* Private define ------------------------------------------------------------*/\r\n/* USER CODE BEGIN PD */\r\n\r\n/* USER CODE END PD */\r\n\r\n/* Private macro -------------------------------------------------------------*/\r\n/* USER CODE BEGIN PM */\r\n\r\n/* USER CODE END PM */\r\n\r\n/* Private variables ---------------------------------------------------------*/\r\n\r\n/* USER CODE BEGIN PV */\r\nstruct\r\n{\r\n  double kp;\r\n  double target;\r\n\r\n  double kd;\r\n  double err;\r\n  double err_last;\r\n\r\n  double ki;\r\n  double inte;\r\n  double inte_max;\r\n\r\n  double deadzone;\r\n\r\n}PID_data;\r\n\r\nchar str1[16];\r\nchar str2[16];\r\nchar str3[16];\r\nchar str4[16];\r\nchar str5[16];\r\nint16_t test1 ;\r\nfloat TargetVol;\r\nfloat CurrentVol;\r\nfloat CurrentPWM;\r\nfloat value;\r\nint8_t BuckState;\r\nint8_t ProtectState;\r\n/* USER CODE END PV */\r\n\r\n/* Private function prototypes -----------------------------------------------*/\r\nvoid SystemClock_Config(void);\r\n/* USER CODE BEGIN PFP */\r\n\r\n/* USER CODE END PFP */\r\n\r\n/* Private user code ---------------------------------------------------------*/\r\n/* USER CODE BEGIN 0 */\r\nvoid HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)\r\n{\r\n  //0.001s一次\r\n  if (htim->Instance == TIM2)\r\n  {\r\n    //设置占空比\r\n    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,CurrentPWM);//左\r\n    //采集电压\r\n    HAL_ADC_Start(&hadc1);\r\n    HAL_ADC_PollForConversion(&hadc1, 1000);\r\n    value = HAL_ADC_GetValue(&hadc1);\r\n    //三元线性拟合\r\n    CurrentVol = 0.812*(value /100)+0.000395*(value /100)*(value /100)-0.0000295*(value /100)*(value /100)*(value /100)+0.5945;\r\n\r\n    //误差值计算\r\n    PID_data.err = TargetVol - CurrentVol;\r\n    //判断死区，防乱跳\r\n    if (PID_data.err>=PID_data.deadzone||PID_data.err<=-PID_data.deadzone)\r\n    {\r\n      //使只当激活继电器时调节pid，不然关闭继电器后pwm马上会到最高\r\n      if (ProtectState == 1)\r\n      {\r\n        //增量式pid调节\r\n        CurrentPWM += PID_data.err * PID_data.kp;\r\n\r\n        //限幅pwm\r\n        if (CurrentPWM > 98)\r\n        {\r\n          CurrentPWM = 98;\r\n        }\r\n        else if (CurrentPWM < 0)\r\n        {\r\n          CurrentPWM = 0;\r\n        }\r\n\r\n      }\r\n\r\n    }\r\n    //闪灯（虽然1khz看不出来。。。）\r\n    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);\r\n  }\r\n\r\n}\r\n/* USER CODE END 0 */\r\n\r\n/**\r\n  * @brief  The application entry point.\r\n  * @retval int\r\n  */\r\nint main(void)\r\n{\r\n\r\n  /* USER CODE BEGIN 1 */\r\n\r\n  /* USER CODE END 1 */\r\n\r\n  /* MCU Configuration--------------------------------------------------------*/\r\n\r\n  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */\r\n  HAL_Init();\r\n\r\n  /* USER CODE BEGIN Init */\r\n\r\n  /* USER CODE END Init */\r\n\r\n  /* Configure the system clock */\r\n  SystemClock_Config();\r\n\r\n  /* USER CODE BEGIN SysInit */\r\n\r\n  /* USER CODE END SysInit */\r\n\r\n  /* Initialize all configured peripherals */\r\n  MX_GPIO_Init();\r\n  MX_TIM1_Init();\r\n  MX_TIM2_Init();\r\n  MX_ADC1_Init();\r\n  /* USER CODE BEGIN 2 */\r\n  HAL_TIM_Base_Start_IT(&htim2);\r\n  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);\r\n  OLED_Init();\r\n  OLED_Clear();\r\n\r\n  //初始参数设置\r\n  TargetVol = 5;\r\n  CurrentVol = 0;\r\n  CurrentPWM = 50;\r\n  BuckState = 0;\r\n  ProtectState = 0;\r\n\r\n  PID_data.kp = 1.0;\r\n  PID_data.deadzone =0.10;\r\n\r\n  /* USER CODE END 2 */\r\n\r\n  /* Infinite loop */\r\n  /* USER CODE BEGIN WHILE */\r\n  while (1)\r\n  {\r\n\r\n\r\n\r\n    //reset低0\r\n\r\n    //mode按键控制继电器\r\n    if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_15)==RESET)\r\n    {\r\n      HAL_Delay(10);\r\n       while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_15)==RESET);\r\n      ProtectState = ProtectState==1?0:1 ;\r\n    }\r\n    //激活继电器，开始降压\r\n     if (ProtectState == 0)\r\n     {\r\n       HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10,GPIO_PIN_RESET);\r\n     }\r\n     else if (ProtectState == 1)\r\n     {\r\n       HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10,GPIO_PIN_SET);\r\n     }\r\n\r\n      //手动更改目标电压值\r\n    //pb12加\r\n    if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12)==RESET)\r\n    {\r\n      HAL_Delay(10);\r\n      while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12)==RESET);\r\n      TargetVol = TargetVol + 0.2;\r\n    }\r\n    //pb13减\r\n    if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)==RESET)\r\n    {\r\n      HAL_Delay(10);\r\n      while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)==RESET);\r\n      TargetVol = TargetVol - 0.2;\r\n    }\r\n\r\n    //限幅pwm\r\n    if (CurrentPWM > 98)\r\n    {\r\n      CurrentPWM = 98;\r\n    }\r\n    else if (CurrentPWM < 0)\r\n    {\r\n      CurrentPWM = 0;\r\n    }\r\n\r\n\r\n    //此为栅极驱动使能引脚当前电平状态，貌似没什么用\r\n    BuckState = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9);\r\n\r\n    sprintf(str1,\"%.2f\\n\",TargetVol);\r\n    sprintf(str2,\"%.2f\\n\",CurrentVol);\r\n    sprintf(str3,\"%.2f\\n\",CurrentPWM);\r\n    sprintf(str4,\"%d\\n\",BuckState);\r\n    // sprintf(str4,\"%.2f\\n\",PID_data.err);\r\n    sprintf(str5,\"%d\\n\",ProtectState);\r\n\r\n    OLED_ShowString(1,1,\"TargetVol\",OLED_6X8);\r\n    OLED_ShowString(1,13,\"CurrentVol\",OLED_6X8);\r\n    OLED_ShowString(1,26,\"CurrentPWM\",OLED_6X8);\r\n    OLED_ShowString(1,39,\"BuckState\",OLED_6X8);\r\n    // OLED_ShowString(1,39,\"Test\",OLED_6X8);\r\n    OLED_ShowString(1,52,\"ProtectState\",OLED_6X8);\r\n\r\n    OLED_ShowString(79,1,str1,OLED_6X8);\r\n    OLED_ShowString(79,13,str2,OLED_6X8);\r\n    OLED_ShowString(79,26,str3,OLED_6X8);\r\n    OLED_ShowString(79,39,str4,OLED_6X8);\r\n    OLED_ShowString(79,52,str5,OLED_6X8);\r\n\r\n    OLED_Update();\r\n\r\n    //限制oled刷新速度\r\n    HAL_Delay(10);\r\n    /* USER CODE END WHILE */\r\n\r\n    /* USER CODE BEGIN 3 */\r\n  }\r\n  /* USER CODE END 3 */\r\n}\r\n\r\n/**\r\n  * @brief System Clock Configuration\r\n  * @retval None\r\n  */\r\nvoid SystemClock_Config(void)\r\n{\r\n  RCC_OscInitTypeDef RCC_OscInitStruct = {0};\r\n  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};\r\n  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};\r\n\r\n  /** Initializes the RCC Oscillators according to the specified parameters\r\n  * in the RCC_OscInitTypeDef structure.\r\n  */\r\n  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;\r\n  RCC_OscInitStruct.HSEState = RCC_HSE_ON;\r\n  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;\r\n  RCC_OscInitStruct.HSIState = RCC_HSI_ON;\r\n  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;\r\n  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;\r\n  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;\r\n  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)\r\n  {\r\n    Error_Handler();\r\n  }\r\n\r\n  /** Initializes the CPU, AHB and APB buses clocks\r\n  */\r\n  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK\r\n                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;\r\n  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;\r\n  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;\r\n  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;\r\n  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;\r\n\r\n  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)\r\n  {\r\n    Error_Handler();\r\n  }\r\n  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;\r\n  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;\r\n  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)\r\n  {\r\n    Error_Handler();\r\n  }\r\n}\r\n\r\n/* USER CODE BEGIN 4 */\r\n\r\n/* USER CODE END 4 */\r\n\r\n/**\r\n  * @brief  This function is executed in case of error occurrence.\r\n  * @retval None\r\n  */\r\nvoid Error_Handler(void)\r\n{\r\n  /* USER CODE BEGIN Error_Handler_Debug */\r\n  /* User can add his own implementation to report the HAL error return state */\r\n  __disable_irq();\r\n  while (1)\r\n  {\r\n  }\r\n  /* USER CODE END Error_Handler_Debug */\r\n}\r\n\r\n#ifdef  USE_FULL_ASSERT\r\n/**\r\n  * @brief  Reports the name of the source file and the source line number\r\n  *         where the assert_param error has occurred.\r\n  * @param  file: pointer to the source file name\r\n  * @param  line: assert_param error line source number\r\n  * @retval None\r\n  */\r\nvoid assert_failed(uint8_t *file, uint32_t line)\r\n{\r\n  /* USER CODE BEGIN 6 */\r\n  /* User can add his own implementation to report the file name and line number,\r\n     ex: printf(\"Wrong parameters value: file %s on line %d\\r\\n\", file, line) */\r\n  /* USER CODE END 6 */\r\n}\r\n#endif /* USE_FULL_ASSERT */\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Core/Src/main.c b/Core/Src/main.c
+--- a/Core/Src/main.c	(revision f2ac4126d32f87957a2983a5b2b78e1f5549f13d)
++++ b/Core/Src/main.c	(date 1744970150706)
+@@ -111,19 +111,30 @@
+         //增量式pid调节
+         CurrentPWM += PID_data.err * PID_data.kp;
+ 
+-        //限幅pwm
+-        if (CurrentPWM > 98)
+-        {
+-          CurrentPWM = 98;
+-        }
+-        else if (CurrentPWM < 0)
+-        {
+-          CurrentPWM = 0;
+-        }
++      }
++
++    }
++
++    //限幅pwm
++    if (CurrentPWM > 98)
++    {
++      CurrentPWM = 98;
++    }
++    else if (CurrentPWM < 0)
++    {
++      CurrentPWM = 0;
++    }
+ 
+-      }
+-
++    //限幅输出电压，保护adc采集引脚
++    if (TargetVol > 33.0f)
++    {
++      TargetVol = 33.0f;
++    }
++    else if (TargetVol < 0.0f)
++    {
++      TargetVol = 0.0f;
+     }
++
+     //闪灯（虽然1khz看不出来。。。）
+     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+   }
+@@ -223,16 +234,6 @@
+       TargetVol = TargetVol - 0.2;
+     }
+ 
+-    //限幅pwm
+-    if (CurrentPWM > 98)
+-    {
+-      CurrentPWM = 98;
+-    }
+-    else if (CurrentPWM < 0)
+-    {
+-      CurrentPWM = 0;
+-    }
+-
+ 
+     //此为栅极驱动使能引脚当前电平状态，貌似没什么用
+     BuckState = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9);

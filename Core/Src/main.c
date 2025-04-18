@@ -111,19 +111,30 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         //增量式pid调节
         CurrentPWM += PID_data.err * PID_data.kp;
 
-        //限幅pwm
-        if (CurrentPWM > 98)
-        {
-          CurrentPWM = 98;
-        }
-        else if (CurrentPWM < 0)
-        {
-          CurrentPWM = 0;
-        }
-
       }
 
     }
+
+    //限幅pwm
+    if (CurrentPWM > 98)
+    {
+      CurrentPWM = 98;
+    }
+    else if (CurrentPWM < 0)
+    {
+      CurrentPWM = 0;
+    }
+
+    //限幅输出电压，保护adc采集引脚
+    if (TargetVol > 33.0f)
+    {
+      TargetVol = 33.0f;
+    }
+    else if (TargetVol < 0.0f)
+    {
+      TargetVol = 0.0f;
+    }
+
     //闪灯（虽然1khz看不出来。。。）
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
   }
@@ -221,16 +232,6 @@ int main(void)
       HAL_Delay(10);
       while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)==RESET);
       TargetVol = TargetVol - 0.2;
-    }
-
-    //限幅pwm
-    if (CurrentPWM > 98)
-    {
-      CurrentPWM = 98;
-    }
-    else if (CurrentPWM < 0)
-    {
-      CurrentPWM = 0;
     }
 
 
